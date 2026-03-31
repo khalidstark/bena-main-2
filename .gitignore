@@ -21,5 +21,9 @@ ios/Flutter/Flutter.podspec
 build/
 */build/
 
+# Firebase config files — contain API keys, do not commit
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
 # Misc
 *.log
