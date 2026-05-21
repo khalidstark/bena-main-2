@@ -83,7 +83,20 @@ flutter pub get
 flutter run
 ```
 
-Configure Firebase by adding your own `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) from your Firebase project console.
+Configure Firebase by adding your own `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) from your Firebase project console. Then regenerate `lib/firebase_options.dart` with `flutterfire configure` so the client SDKs point at your own Firebase project.
+
+---
+
+## Security Notes
+
+The Firebase API keys you'll see in `lib/firebase_options.dart` are **client identifiers**, not secrets — Google [documents them as safe to expose](https://firebase.google.com/docs/projects/api-keys) because they only identify the project, not authenticate it. Real security comes from the cloud side:
+
+- **Firestore Security Rules** — make sure rules are not `allow read, write: if true`. Lock reads/writes to the authenticated user's own documents.
+- **Firebase Storage rules** — same: gate by `request.auth.uid`.
+- **API key restrictions** — in Google Cloud Console → APIs & Services → Credentials, restrict each Firebase API key to your Android package name + SHA-1 fingerprint and your iOS bundle ID. This blocks anyone who copies the key from using it against your project.
+- **App Check** — enable in the Firebase Console to verify that requests come from your real app binary.
+
+If you ever add a server-side secret (Cloud Function third-party API key, Stripe secret, etc.), do **not** put it in client code. Use environment variables on the Cloud Function side or a secret manager.
 
 ---
 

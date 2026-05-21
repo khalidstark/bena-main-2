@@ -25,5 +25,15 @@ build/
 android/app/google-services.json
 ios/Runner/GoogleService-Info.plist
 
+# Environment variables — never commit real keys
+.env
+.env.local
+.env.*.local
+
+# Node (committed by mistake previously)
+node_modules/
+package-lock.json
+package.json
+
 # Misc
 *.log
