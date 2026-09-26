@@ -12,6 +12,21 @@ Full research report: [`research_report.pdf`](./research_report.pdf)
 
 ---
 
+## Screenshots
+
+<p align="center">
+  <img src="Screenshot_20250220_122016.png" width="300" />
+</p>
+
+<!-- TODO: add more screenshots/GIF, e.g.
+<p align="center">
+  <img src="assets/screenshots/leaderboard.png" width="250" />
+  <img src="assets/screenshots/garden.png" width="250" />
+</p>
+-->
+
+---
+
 ## The Idea
 
 Procrastination is not a discipline problem — it's a competition problem. Students aren't lazy; they're just competing in the wrong arena (TikTok, Instagram, games). Bena moves the competition to studying.
